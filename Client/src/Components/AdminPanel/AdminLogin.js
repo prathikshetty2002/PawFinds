@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AdminPanel from "./AdminPanel";
-
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://pawfinds.onrender.com';
 const AdminLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -11,7 +11,7 @@ const AdminLogin = () => {
   useEffect(() => {
     const fetchUsersData = async () => {
       try {
-        const response = await fetch('http://localhost:4000/admin/credentials');
+        const response = await fetch(`${API_BASE_URL}/admin/credentials`);
         if (!response.ok) {
           throw new Error('Failed to fetch');
         }
