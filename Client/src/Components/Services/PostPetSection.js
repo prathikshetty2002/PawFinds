@@ -1,6 +1,8 @@
+require('dotenv').config();
+
 import React, { useState, useEffect } from "react";
 import postPet from "./images/postPet.png";
-
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://pawfinds.onrender.com';
 const PostPetSection = () => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
@@ -81,7 +83,7 @@ const PostPetSection = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:4000/services", {
+      const response = await fetch(`${API_BASE_URL}/services`, {
         method: "POST",
         body: formData,
       });
