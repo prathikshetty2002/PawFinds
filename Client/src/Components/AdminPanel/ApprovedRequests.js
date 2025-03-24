@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 import React, { useState, useEffect } from 'react'
 import PetCards from './PetCards'
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://pawfinds.onrender.com';
