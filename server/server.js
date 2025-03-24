@@ -14,6 +14,10 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Backend is running...");
+});
+
 app.use(express.urlencoded({ extended: true }));
 
 app.use(petRouter)
