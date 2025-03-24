@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 import React, { useState } from 'react';
 import { formatDistanceToNow } from 'date-fns';
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://pawfinds.onrender.com';
